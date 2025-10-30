@@ -1,0 +1,15 @@
+{
+  "name": "Example Spec Kit",
+  "command": "example-spec-kit",
+  "description": "An example specification toolkit demonstrating best practices",
+  "pypi_package": "example-spec-kit",
+  "repository": "https://github.com/your-username/example-spec-kit",
+  "author": "Your Name",
+  "version": "1.0.0",
+  "tags": ["example", "tutorial", "api"],
+  "cli_commands": ["init", "validate", "generate"],
+  "slash_commands": [],
+  "source": "community",
+  "is_builtin": false
+}
+
