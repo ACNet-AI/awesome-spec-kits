@@ -2,7 +2,7 @@
 
 > A curated list of awesome specification toolkits (speckits) built with [MetaSpec](https://github.com/ACNet-AI/MetaSpec)
 
-Specification toolkits that help you define, validate, and enforce specifications in your projects.
+Specification toolkits that drive AI to generate content. Define specs once, let AI create code, docs, and more - spec-driven AI development.
 
 ## Contents
 
@@ -14,13 +14,15 @@ Specification toolkits that help you define, validate, and enforce specification
 
 ## What is a Speckit?
 
-A **speckit** (specification toolkit) is a command-line tool that helps you:
-- ✅ Define specifications for your domain (API, config, protocols, etc.)
-- 🔍 Validate files against specifications
-- 🚀 Generate boilerplate from specifications
-- 📚 Maintain consistency across projects
+A **speckit** (specification toolkit) uses specifications to **drive AI content generation**:
 
-Built with [MetaSpec](https://github.com/ACNet-AI/MetaSpec), speckits follow spec-driven development principles.
+- 📝 **Define** clear specifications for your domain (API, protocols, configs, etc.)
+- 🤖 **Generate** AI-driven content based on specifications (code, docs, configs)
+- ✅ **Validate** generated content against specifications
+- 🎯 **Ensure** consistency and quality across AI outputs
+- 🚀 **Automate** content creation with spec-driven prompts
+
+Built with [MetaSpec](https://github.com/ACNet-AI/MetaSpec), speckits follow spec-driven AI development principles.
 
 ## Available Speckits
 
