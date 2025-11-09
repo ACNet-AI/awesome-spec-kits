@@ -4,7 +4,6 @@ Validate speckit from GitHub Issue and extract metadata.
 """
 import os
 import sys
-import json
 import re
 import requests
 from typing import Dict, Optional, Tuple
@@ -52,7 +51,7 @@ def fetch_file_from_github(owner: str, repo_name: str, file_path: str, branch: s
 def parse_toml_simple(content: str) -> Dict:
     """Simple TOML parser for pyproject.toml."""
     try:
-        import toml
+        import toml  # pyright: ignore[reportMissingModuleSource]
         return toml.loads(content)
     except ImportError:
         # Fallback: simple regex-based parsing
@@ -217,7 +216,7 @@ def main():
         github_output = os.environ.get('GITHUB_OUTPUT', '')
         if github_output:
             with open(github_output, 'a') as f:
-                f.write(f"valid=false\n")
+                f.write("valid=false\n")
                 f.write(f"error<<EOF\n{error_msg}\nEOF\n")
         
         sys.exit(1)
