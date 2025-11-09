@@ -49,13 +49,13 @@ Built with [MetaSpec](https://github.com/ACNet-AI/MetaSpec), speckits follow spe
 pip install meta-spec
 
 # Search for speckits
-metaspec register --search "api validation"
+metaspec search "api validation"
 
 # List all available
-metaspec register --list-community
+metaspec list
 
 # Install a speckit
-metaspec register --install <speckit-name>
+metaspec install <speckit-name>
 ```
 
 ### Direct Installation
@@ -66,9 +66,6 @@ pip install <speckit-name>
 
 # Use directly
 <speckit-name> --help
-
-# Or via MetaSpec
-metaspec spec <speckit-name> <command>
 ```
 
 ## Contributing
