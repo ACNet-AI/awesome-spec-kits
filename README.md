@@ -1,6 +1,6 @@
 # Awesome Spec Kits [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> A curated list of awesome specification toolkits (speckits) built with [MetaSpec](https://github.com/zhaoyao8727/MetaSpec)
+> A curated list of awesome specification toolkits (speckits) built with [MetaSpec](https://github.com/ACNet-AI/MetaSpec)
 
 Specification toolkits that help you define, validate, and enforce specifications in your projects.
 
@@ -20,7 +20,7 @@ A **speckit** (specification toolkit) is a command-line tool that helps you:
 - 🚀 Generate boilerplate from specifications
 - 📚 Maintain consistency across projects
 
-Built with [MetaSpec](https://github.com/zhaoyao8727/MetaSpec), speckits follow spec-driven development principles.
+Built with [MetaSpec](https://github.com/ACNet-AI/MetaSpec), speckits follow spec-driven development principles.
 
 ## Available Speckits
 
@@ -117,15 +117,15 @@ We maintain quality to ensure good user experience:
 
 ## Resources
 
-- [MetaSpec Documentation](https://github.com/zhaoyao8727/MetaSpec/tree/main/docs)
-- [Creating a Speckit](https://github.com/zhaoyao8727/MetaSpec/blob/main/docs/quickstart.md)
-- [Community Guide](https://github.com/zhaoyao8727/MetaSpec/blob/main/docs/community-registry.md)
+- [MetaSpec Documentation](https://github.com/ACNet-AI/MetaSpec/tree/main/docs)
+- [Creating a Speckit](https://github.com/ACNet-AI/MetaSpec/blob/main/docs/quickstart.md)
+- [Community Guide](https://github.com/ACNet-AI/MetaSpec/blob/main/docs/community-registry.md)
 
 ## Statistics
 
 - **Total Speckits**: 0
 - **Contributors**: 0
-- **Last Updated**: 2024-01-15
+- **Last Updated**: 2025-11-09
 
 ## License
 
@@ -135,5 +135,5 @@ This list is released under CC0 (Public Domain). Individual speckits have their 
 
 ## Acknowledgments
 
-Maintained by the [ACNet-AI](https://github.com/ACNet-AI) community and [MetaSpec](https://github.com/zhaoyao8727/MetaSpec) contributors.
+Maintained by the [ACNet-AI](https://github.com/ACNet-AI) community and [MetaSpec](https://github.com/ACNet-AI/MetaSpec) contributors.
 
