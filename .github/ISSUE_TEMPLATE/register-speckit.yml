@@ -1,0 +1,80 @@
+name: 🚀 Register Speckit
+description: Register your speckit to awesome-spec-kits registry
+title: "[Register] "
+labels: ["registration"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📦 Register Your Speckit
+        
+        Our bot will automatically:
+        1. ✅ Validate your speckit
+        2. ✅ Extract metadata from pyproject.toml
+        3. ✅ Create a PR to add it to the registry
+        
+        **Requirements**:
+        - Valid `pyproject.toml` with required fields (name, version, description)
+        - README.md with documentation
+        - Open source license (MIT, Apache, BSD, etc.)
+        - Working CLI commands
+
+  - type: input
+    id: repository
+    attributes:
+      label: GitHub Repository
+      description: Your speckit's GitHub repository URL
+      placeholder: https://github.com/ACNet-AI/MetaSpec
+    validations:
+      required: true
+
+  - type: input
+    id: pypi
+    attributes:
+      label: PyPI Package Name (Optional)
+      description: Package name on PyPI if published
+      placeholder: meta-spec
+
+  - type: textarea
+    id: highlights
+    attributes:
+      label: Key Features (Optional)
+      description: Brief highlight of your speckit's main features (3-5 points)
+      placeholder: |
+        - Feature 1
+        - Feature 2
+        - Feature 3
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Requirements Checklist
+      options:
+        - label: My speckit has a valid `pyproject.toml` with name, version, and description
+          required: true
+        - label: My speckit has `README.md` documentation
+          required: true
+        - label: My speckit has working CLI commands defined in `[project.scripts]`
+          required: true
+        - label: My speckit has an open source license
+          required: true
+        - label: I am the maintainer or have permission to register this speckit
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        **What happens next?**
+        
+        After you submit this issue:
+        1. Our bot will validate your speckit
+        2. If valid, a PR will be automatically created
+        3. Maintainers will review and merge the PR
+        4. Your speckit will appear in the registry!
+        
+        If validation fails, the bot will comment with details on what needs to be fixed.
+

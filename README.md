@@ -75,29 +75,37 @@ metaspec spec <speckit-name> <command>
 
 Have a speckit to share? **We'd love to have it!**
 
-### Quick Submit
+### 🚀 Automated Registration (Recommended)
+
+**1-Click Registration via Issue Template:**
+
+1. Go to [**Create Registration Issue**](../../issues/new?template=register-speckit.yml)
+2. Fill in your speckit's GitHub repository URL
+3. Submit the issue
+4. **Done!** Our bot will:
+   - ✅ Validate your speckit
+   - ✅ Extract metadata from `pyproject.toml`
+   - ✅ Create a PR automatically
+   - ✅ Notify you of the result
+
+**Requirements**:
+- Valid `pyproject.toml` with name, version, description
+- `README.md` with documentation
+- Working CLI commands in `[project.scripts]`
+- Open source license
+
+### Manual Submission (Alternative)
+
+If you prefer the traditional way:
 
 ```bash
-# 1. Create your speckit
-metaspec init my-awesome-speckit
-
-# 2. Publish to PyPI
-uv build && uv publish
-
-# 3. Generate metadata
-metaspec register my-awesome-speckit --publish
-
-# 4. Fork this repo and create PR
+# 1. Fork this repo
+# 2. Edit speckits.json
+# 3. Add your speckit entry
+# 4. Create PR
 ```
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
-
-### Submission Requirements
-
-- ✅ Published to PyPI
-- ✅ Working CLI commands
-- ✅ Basic documentation (README)
-- ✅ Valid metadata
 
 ### Quality Standards
 
