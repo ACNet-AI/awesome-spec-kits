@@ -1,15 +1,13 @@
 {
-  "name": "Example Spec Kit",
-  "command": "example-spec-kit",
-  "description": "An example specification toolkit demonstrating best practices",
-  "pypi_package": "example-spec-kit",
-  "repository": "https://github.com/your-username/example-spec-kit",
-  "author": "Your Name",
+  "name": "example-spec-kit",
   "version": "1.0.0",
-  "tags": ["example", "tutorial", "api"],
-  "cli_commands": ["init", "validate", "generate"],
-  "slash_commands": [],
-  "source": "community",
-  "is_builtin": false
+  "description": "An example specification toolkit demonstrating best practices for MetaSpec speckits",
+  "repository": "https://github.com/your-username/example-spec-kit",
+  "pypi_package": "example-spec-kit",
+  "cli_command": "example-spec-kit",
+  "license": "MIT",
+  "tags": ["example", "tutorial", "api", "validation"],
+  "created_at": "2025-11-09",
+  "updated_at": "2025-11-09",
+  "status": "active"
 }
-
