@@ -1,8 +1,8 @@
 # Awesome Spec Kits [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> A curated list of awesome specification toolkits (speckits) for spec-driven AI development
+> A curated list of awesome specification toolkits (speckits) for spec-driven development
 
-Specification toolkits that drive AI to generate content. Define specs once, let AI create code, docs, and more - spec-driven AI development.
+Specification toolkits that use specifications to drive content generation. Define specs once, generate anything - code, docs, configs, tests, and more. Spec-Driven X (SD-X) for the AI era.
 
 ## Contents
 
@@ -14,15 +14,17 @@ Specification toolkits that drive AI to generate content. Define specs once, let
 
 ## What is a Speckit?
 
-A **speckit** (specification toolkit) uses specifications to **drive AI content generation**:
+A **speckit** (specification toolkit) uses specifications to **drive content generation**:
 
 - 📝 **Define** clear specifications for your domain (API, protocols, configs, etc.)
-- 🤖 **Generate** AI-driven content based on specifications (code, docs, configs)
+- 🤖 **Generate** content from specifications (code, docs, configs, tests, schemas, etc.)
 - ✅ **Validate** generated content against specifications
-- 🎯 **Ensure** consistency and quality across AI outputs
-- 🚀 **Automate** content creation with spec-driven prompts
+- 🎯 **Ensure** consistency and quality across outputs
+- 🚀 **Automate** content creation with spec-driven workflows
 
-Speckits can be built with any framework or tool. [MetaSpec](https://github.com/ACNet-AI/MetaSpec) is one popular framework for creating speckits, but you're welcome to use any technology stack that follows spec-driven AI development principles.
+Speckits embody the **Spec-Driven X (SD-X)** philosophy: define once, generate many. Whether you're creating API toolkits (SD-API), configuration tools (SD-Config), or documentation generators (SD-Docs), speckits make specifications the single source of truth.
+
+Speckits can be built with any framework or tool. [MetaSpec](https://github.com/ACNet-AI/MetaSpec) is one popular framework for creating speckits, but you're welcome to use any technology stack that follows spec-driven development principles.
 
 ## Available Speckits
 

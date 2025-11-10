@@ -4,7 +4,7 @@ Thank you for your interest in contributing! This guide explains how to add your
 
 ## 🌟 Open to All Technology Stacks
 
-**We welcome speckits built with any framework or language!** Whether you use Python, JavaScript, Go, Rust, or any other technology stack, as long as your toolkit follows spec-driven AI development principles, you're welcome to register.
+**We welcome speckits built with any framework or language!** Whether you use Python, JavaScript, Go, Rust, or any other technology stack, as long as your toolkit follows spec-driven development principles (Spec-Driven X / SD-X), you're welcome to register.
 
 **Note**: Our automated registration currently supports Python projects with `pyproject.toml`. For projects in other languages (Node.js, Go, Rust, etc.), please use the [manual registration process](#-manual-registration-alternative).
 
