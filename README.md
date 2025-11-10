@@ -2,7 +2,7 @@
 
 > A curated list of awesome specification toolkits (speckits) for spec-driven development
 
-Specification toolkits that use specifications to drive content generation. Define specs once, generate anything - code, docs, configs, tests, and more. Spec-Driven X (SD-X) for the AI era.
+Specification toolkits that drive AI to generate content. Define specs, let AI create code, docs, configs, tests, protocols, and more. Spec-Driven X (SD-X) for the AI era.
 
 ## Contents
 
@@ -14,20 +14,24 @@ Specification toolkits that use specifications to drive content generation. Defi
 
 ## What is a Speckit?
 
-A **speckit** (specification toolkit) uses specifications to **drive content generation**:
+A **speckit** (specification toolkit) drives AI to generate content from specifications:
 
-- 📝 **Define** clear specifications for your domain (API, protocols, configs, etc.)
-- 🤖 **Generate** content from specifications (code, docs, configs, tests, schemas, etc.)
-- ✅ **Validate** generated content against specifications
-- 🎯 **Ensure** consistency and quality across outputs
-- 🚀 **Automate** content creation with spec-driven workflows
+- 📝 **Define** specifications for your domain (API, protocols, configs, etc.)
+- 🤖 **AI Generates** - Specs drive AI to create code, docs, configs, tests, designs, protocols
+- ✅ **Validate** - Specs validate AI-generated content for quality and conformance
+- 🎯 **Consistency** - Same spec ensures consistent outputs across the board
+- 🚀 **Automation** - Specs automate what would be manual work
 
-Speckits embody the **Spec-Driven X (SD-X)** philosophy: define once, generate many. Whether you're building:
-- **SDS** (Spec-Driven Specification) - Define protocols and standards
-- **SDD** (Spec-Driven Development) - Generate code, docs, tests from specs
-- **SDV** (Spec-Driven Validation) - Validate content against specs
+**Spec-Driven X (SD-X)** philosophy: **Specs → AI → X (Anything)**
 
-Speckits make specifications the **single source of truth**.
+Whether you're building:
+- **SD-Development** - Specs → AI → Code, tests, implementations
+- **SD-Design** - Specs → AI → UI designs, architectures  
+- **SD-Protocol** - Specs → AI → Protocol definitions, standards
+- **SD-API** - API specs → AI → Client SDKs, server implementations
+- **SD-X** - Any domain where specs drive AI generation
+
+Speckits make specifications the **single source of truth** that drives AI.
 
 **How to build a speckit?** Any way you want! Build from scratch, use a framework, or adapt existing tools - as long as it follows spec-driven principles. [MetaSpec](https://github.com/ACNet-AI/MetaSpec) is one option if you want a framework, but you're completely free to implement your own solution in any language with any approach.
 
