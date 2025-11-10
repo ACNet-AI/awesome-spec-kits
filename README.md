@@ -24,7 +24,7 @@ A **speckit** (specification toolkit) uses specifications to **drive content gen
 
 Speckits embody the **Spec-Driven X (SD-X)** philosophy: define once, generate many. Whether you're creating API toolkits (SD-API), configuration tools (SD-Config), or documentation generators (SD-Docs), speckits make specifications the single source of truth.
 
-Speckits can be built with any framework or tool. [MetaSpec](https://github.com/ACNet-AI/MetaSpec) is one popular framework for creating speckits, but you're welcome to use any technology stack that follows spec-driven development principles.
+**How to build a speckit?** Any way you want! Build from scratch, use a framework, or adapt existing tools - as long as it follows spec-driven principles. [MetaSpec](https://github.com/ACNet-AI/MetaSpec) is one option if you want a framework, but you're completely free to implement your own solution in any language with any approach.
 
 ## Available Speckits
 

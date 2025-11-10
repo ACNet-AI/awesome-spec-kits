@@ -2,9 +2,16 @@
 
 Thank you for your interest in contributing! This guide explains how to add your speckit to the registry.
 
-## 🌟 Open to All Technology Stacks
+## 🌟 Open to All Implementations
 
-**We welcome speckits built with any framework or language!** Whether you use Python, JavaScript, Go, Rust, or any other technology stack, as long as your toolkit follows spec-driven development principles (Spec-Driven X / SD-X), you're welcome to register.
+**We welcome any speckit that follows spec-driven principles!** 
+
+- ✅ **Build from scratch** - Implement your own solution without any framework
+- ✅ **Use any framework** - MetaSpec, or any other framework you prefer
+- ✅ **Any language** - Python, JavaScript, Go, Rust, whatever you choose
+- ✅ **Adapt existing tools** - Extend or wrap existing tools to be spec-driven
+
+As long as your toolkit embodies Spec-Driven X (SD-X) philosophy and meets our registration requirements, you're welcome!
 
 **Note**: Our automated registration currently supports Python projects with `pyproject.toml`. For projects in other languages (Node.js, Go, Rust, etc.), please use the [manual registration process](#-manual-registration-alternative).
 
@@ -239,10 +246,16 @@ description = "A toolkit for validating API specifications"
 
 ## 📚 Resources
 
-- [Example Speckit Metadata](./examples/example-speckit.json)
-- [MetaSpec Framework](https://github.com/ACNet-AI/MetaSpec) - One option for creating speckits
-- [MetaSpec Documentation](https://github.com/ACNet-AI/MetaSpec/tree/main/docs) - If using MetaSpec
+- [Example Speckit Metadata](./examples/example-speckit.json) - Required metadata format for registration
+- [MetaSpec Framework](https://github.com/ACNet-AI/MetaSpec) - Optional framework for creating speckits
+- [MetaSpec Documentation](https://github.com/ACNet-AI/MetaSpec/tree/main/docs) - If you choose to use MetaSpec
 - [Creating a Speckit with MetaSpec](https://github.com/ACNet-AI/MetaSpec/blob/main/docs/quickstart.md)
+
+**Building from scratch?** No problem! Just ensure your speckit:
+- Has a CLI interface with clear commands
+- Follows spec-driven principles (specs drive generation/validation)
+- Has good documentation (README with examples)
+- Includes an open source license
 
 ## 💬 Questions?
 
