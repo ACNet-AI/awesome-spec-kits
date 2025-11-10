@@ -123,7 +123,8 @@ We maintain quality to ensure good user experience:
 
 ## Resources
 
-- [MetaSpec Framework](https://github.com/ACNet-AI/MetaSpec) - A popular framework for creating speckits
+- [GitHub Spec-Kit](https://github.com/github/spec-kit) - Official Spec-Driven Development toolkit (46.6k+ stars)
+- [MetaSpec Framework](https://github.com/ACNet-AI/MetaSpec) - Meta-specification framework for creating speckits
 - [MetaSpec Documentation](https://github.com/ACNet-AI/MetaSpec/tree/main/docs)
 - [Creating a Speckit with MetaSpec](https://github.com/ACNet-AI/MetaSpec/blob/main/docs/quickstart.md)
 

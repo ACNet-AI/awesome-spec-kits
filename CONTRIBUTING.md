@@ -222,6 +222,7 @@ A **spec-driven toolkit** uses formal specifications as the **single source of t
 ### 📚 Reference Projects
 
 Learn from these spec-driven projects:
+- [GitHub Spec-Kit](https://github.com/github/spec-kit) - Official toolkit for Spec-Driven Development workflow (46.6k+ stars)
 - [MetaSpec](https://github.com/ACNet-AI/MetaSpec) - Meta-specification framework for generating spec-driven toolkits
 - Additional examples coming soon
 
