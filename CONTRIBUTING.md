@@ -194,6 +194,8 @@ In the AI era, "Spec-Driven" means:
 
 "Spec-Driven X" means: **Specs → AI → X (Any Content)**
 
+The "X" is a variable representing any domain where specifications can drive AI generation. Common examples:
+
 - **SD-Development** - Specs → AI → Code, tests, implementations
 - **SD-Design** - Specs → AI → UI designs, architectures
 - **SD-Protocol** - Specs → AI → Protocol definitions, standards
@@ -201,7 +203,8 @@ In the AI era, "Spec-Driven" means:
 - **SD-API** - API specs → AI → Client SDKs, server stubs
 - **SD-Config** - Config specs → AI → System configurations
 - **SD-Test** - Test specs → AI → Test cases, scenarios
-- **SD-X** - Spec → AI → **Anything you can specify!**
+
+**This is not a fixed taxonomy.** New categories like SD-Security, SD-Infrastructure, SD-Analytics, or any other "SD-X" can emerge. If your toolkit uses specs to drive AI content generation, it qualifies regardless of category.
 
 ### Common Applications (Examples of SD-X)
 

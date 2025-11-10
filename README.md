@@ -24,7 +24,7 @@ A **speckit** (specification toolkit) drives AI to generate content from specifi
 
 **Spec-Driven X (SD-X)** philosophy: **Specs → AI → X (Anything)**
 
-Whether you're building:
+Common examples include:
 - **SD-Development** - Specs → AI → Code, tests, implementations
 - **SD-Design** - Specs → AI → UI designs, architectures
 - **SD-Protocol** - Specs → AI → Protocol definitions, standards
@@ -32,7 +32,8 @@ Whether you're building:
 - **SD-API** - API specs → AI → Client SDKs, server implementations
 - **SD-Config** - Config specs → AI → System configurations
 - **SD-Test** - Test specs → AI → Test cases, scenarios
-- **SD-X** - Any domain where specs drive AI generation
+
+The "X" can be **anything** - these categories are not fixed. New SD-X applications emerge as the community discovers new ways to use spec-driven AI generation.
 
 Speckits make specifications the **single source of truth** that drives AI.
 

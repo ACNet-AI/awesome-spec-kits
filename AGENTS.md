@@ -20,7 +20,9 @@ A toolkit is "Spec-Driven" if it satisfies ALL four criteria:
 3. **Spec → Output relationship** - Changing spec changes output
 4. **Spec is authority** - Everything derives from specification
 
-### SD-X Categories
+### SD-X Categories (Examples, Not Exhaustive)
+
+The "X" in SD-X can be anything. Common examples include:
 
 - **SD-Development** - Specs → AI → Code, tests, implementations
 - **SD-Design** - Specs → AI → UI designs, architectures
@@ -29,6 +31,8 @@ A toolkit is "Spec-Driven" if it satisfies ALL four criteria:
 - **SD-API** - API specs → AI → Client SDKs, server implementations
 - **SD-Config** - Config specs → AI → System configurations
 - **SD-Test** - Test specs → AI → Test cases, scenarios
+
+**Note**: This is not a fixed taxonomy. New SD-X categories can emerge as the community discovers new applications of spec-driven AI generation.
 
 ## Project Structure
 
@@ -89,8 +93,10 @@ awesome-spec-kits/
 - **Include**: "What Makes a Speckit Spec-Driven?" section
 
 ### Content Consistency
-- SD-X example lists must be IDENTICAL in both files
-- Use same 7 examples: Development, Design, Protocol, Documentation, API, Config, Test
+- SD-X example lists must be IDENTICAL in README and CONTRIBUTING
+- Always use the same 7 examples: Development, Design, Protocol, Documentation, API, Config, Test
+- Make clear these are EXAMPLES, not a fixed taxonomy
+- Emphasize "X can be anything" - the list is illustrative, not exhaustive
 - Resources sections should reference same projects
 
 ## Development Workflow
