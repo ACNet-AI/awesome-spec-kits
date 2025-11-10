@@ -154,6 +154,87 @@ git commit -m "feat: add my-speckit to registry"
 git push origin add-my-speckit
 ```
 
+## 🔍 What Makes a Speckit "Spec-Driven"?
+
+Before submitting, understand what "Spec-Driven" means:
+
+### Core Principle: Specifications Drive Everything
+
+A **spec-driven toolkit** uses formal specifications as the **single source of truth** to drive content generation, validation, or transformation.
+
+### The Spec-Driven Philosophy
+
+**Spec-Driven X (SD-X)** means:
+- **Define once, generate many** - Write specs, not implementation
+- **Specs → Automation** - Specifications drive automated processes
+- **Declarative over imperative** - Describe "what", not "how"
+- **Version-controlled truth** - Specs are versioned, shared, and reusable
+
+### Three Types of Spec-Driven Tools
+
+1. **Spec-Driven Specification (SDS)** - Define protocols and standards
+   - Example: Protocol definition tools, API schema designers
+   - Input: Requirements, domain models
+   - Output: Formal specifications (OpenAPI, Protocol specs, Schemas)
+
+2. **Spec-Driven Development (SDD)** - Build from specifications
+   - Example: Code generators, SDK builders, doc generators
+   - Input: Specifications (OpenAPI, Protocol buffers, Schemas)
+   - Output: Code, documentation, tests, configs
+
+3. **Spec-Driven Validation (SDV)** - Validate against specifications
+   - Example: Validators, linters, conformance checkers
+   - Input: Specifications + Content to validate
+   - Output: Validation results, conformance reports
+
+### ✅ A Speckit Must Have:
+
+1. **Clear Specification Format**
+   - Structured format (YAML, JSON, Protocol Buffers, custom DSL, etc.)
+   - Machine-readable and processable
+   - Well-documented schema/structure
+
+2. **Spec-Driven Operations**
+   - At least one of:
+     - ✅ Generate content FROM specs
+     - ✅ Validate content AGAINST specs
+     - ✅ Transform specs to other formats
+     - ✅ Analyze/lint specs themselves
+
+3. **Specifications as Primary Input**
+   - Specs are the main driver, not just config
+   - Changing spec changes behavior/output
+   - Specs can be shared and versioned
+
+4. **Automation Through Specs**
+   - Reduces manual work through specification
+   - Specs enable code generation, validation, or transformation
+   - Repeatable and consistent results from specs
+
+### ❌ NOT Spec-Driven:
+
+- **Config file readers** - Just parse config, don't generate from specs
+- **Template engines** - Templates without formal specs
+- **Manual code generators** - Human writes code, not spec-driven
+- **Generic converters** - Format conversion without spec definitions
+- **Simple parsers** - Parse without spec-based generation/validation
+
+### 📚 Reference Projects
+
+Learn from these spec-driven projects:
+- [MetaSpec](https://github.com/ACNet-AI/MetaSpec) - Meta-specification framework for generating spec-driven toolkits
+- Additional examples coming soon
+
+### 💡 Quick Test
+
+Ask yourself:
+1. **Is there a spec?** - Clear, formal specification format
+2. **Does spec drive?** - Spec generates/validates, not just configures
+3. **Can spec change output?** - Modifying spec changes results
+4. **Is spec the truth?** - Everything derives from specification
+
+If you answered "yes" to all four, your toolkit is likely spec-driven!
+
 ## 🔍 Validation & Review Process
 
 Understanding how speckits are validated and reviewed:
@@ -218,7 +299,11 @@ All registrations (automated or manual) go through human review:
    - Check for malicious content or spam
 
 2. **Quality Check**
-   - ✅ **Spec-Driven**: Does it use specs to drive generation/validation?
+   - ✅ **Spec-Driven** (Most Important!):
+     - Has clear specification format
+     - Specs drive generation/validation/transformation
+     - Changing spec changes output
+     - Specs are the single source of truth
    - ✅ **Usability**: Is documentation clear and helpful?
    - ✅ **Completeness**: Are all metadata fields accurate?
    - ✅ **Community Value**: Does it add value to the registry?
@@ -238,12 +323,17 @@ All registrations (automated or manual) go through human review:
 
 ### Common Rejection Reasons
 
-- ❌ Not truly spec-driven (specs are not the primary driver)
-- ❌ Malicious code or security concerns
-- ❌ Incomplete or missing documentation
-- ❌ License incompatibility (not open source)
-- ❌ Spam or low-quality submission
-- ❌ Duplicate of existing speckit
+- ❌ **Not truly spec-driven** - Most common reason:
+  - Just reads config files (not specs)
+  - Template engine without formal specs
+  - Specs don't drive the output
+  - No clear specification format
+  - See [What Makes a Speckit "Spec-Driven"?](#-what-makes-a-speckit-spec-driven) above
+- ❌ **Malicious code or security concerns**
+- ❌ **Incomplete or missing documentation**
+- ❌ **License incompatibility** (not open source)
+- ❌ **Spam or low-quality submission**
+- ❌ **Duplicate of existing speckit**
 
 ### Appeals & Questions
 
