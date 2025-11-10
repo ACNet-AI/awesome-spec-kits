@@ -1,6 +1,6 @@
 # Awesome Spec Kits [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> A curated list of awesome specification toolkits (speckits) built with [MetaSpec](https://github.com/ACNet-AI/MetaSpec)
+> A curated list of awesome specification toolkits (speckits) for spec-driven AI development
 
 Specification toolkits that drive AI to generate content. Define specs once, let AI create code, docs, and more - spec-driven AI development.
 
@@ -22,7 +22,7 @@ A **speckit** (specification toolkit) uses specifications to **drive AI content 
 - 🎯 **Ensure** consistency and quality across AI outputs
 - 🚀 **Automate** content creation with spec-driven prompts
 
-Built with [MetaSpec](https://github.com/ACNet-AI/MetaSpec), speckits follow spec-driven AI development principles.
+Speckits can be built with any framework or tool. [MetaSpec](https://github.com/ACNet-AI/MetaSpec) is one popular framework for creating speckits, but you're welcome to use any technology stack that follows spec-driven AI development principles.
 
 ## Available Speckits
 
@@ -116,9 +116,9 @@ We maintain quality to ensure good user experience:
 
 ## Resources
 
+- [MetaSpec Framework](https://github.com/ACNet-AI/MetaSpec) - A popular framework for creating speckits
 - [MetaSpec Documentation](https://github.com/ACNet-AI/MetaSpec/tree/main/docs)
-- [Creating a Speckit](https://github.com/ACNet-AI/MetaSpec/blob/main/docs/quickstart.md)
-- [Community Guide](https://github.com/ACNet-AI/MetaSpec/blob/main/docs/community-registry.md)
+- [Creating a Speckit with MetaSpec](https://github.com/ACNet-AI/MetaSpec/blob/main/docs/quickstart.md)
 
 ## Statistics
 

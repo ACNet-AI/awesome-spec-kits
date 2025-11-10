@@ -2,9 +2,15 @@
 
 Thank you for your interest in contributing! This guide explains how to add your speckit to the registry.
 
-## 🚀 Quick Start: Automated Registration (Recommended)
+## 🌟 Open to All Technology Stacks
 
-The easiest way to register your speckit is through our automated system:
+**We welcome speckits built with any framework or language!** Whether you use Python, JavaScript, Go, Rust, or any other technology stack, as long as your toolkit follows spec-driven AI development principles, you're welcome to register.
+
+**Note**: Our automated registration currently supports Python projects with `pyproject.toml`. For projects in other languages (Node.js, Go, Rust, etc.), please use the [manual registration process](#-manual-registration-alternative).
+
+## 🚀 Quick Start: Automated Registration (Python Projects)
+
+The easiest way to register your Python speckit is through our automated system:
 
 ### Step 1: Prepare Your Speckit
 
@@ -91,7 +97,10 @@ To ensure good user experience:
 
 ## 🔧 Manual Registration (Alternative)
 
-If you prefer or the automated system is unavailable:
+**For all languages and frameworks** - Use this method if:
+- Your project is not in Python
+- You prefer manual control
+- The automated system is unavailable
 
 ### Step 1: Fork and Clone
 
@@ -230,9 +239,10 @@ description = "A toolkit for validating API specifications"
 
 ## 📚 Resources
 
-- [MetaSpec Documentation](https://github.com/ACNet-AI/MetaSpec/tree/main/docs)
-- [Creating a Speckit](https://github.com/ACNet-AI/MetaSpec/blob/main/docs/quickstart.md)
-- [Example Speckit](./examples/example-speckit.json)
+- [Example Speckit Metadata](./examples/example-speckit.json)
+- [MetaSpec Framework](https://github.com/ACNet-AI/MetaSpec) - One option for creating speckits
+- [MetaSpec Documentation](https://github.com/ACNet-AI/MetaSpec/tree/main/docs) - If using MetaSpec
+- [Creating a Speckit with MetaSpec](https://github.com/ACNet-AI/MetaSpec/blob/main/docs/quickstart.md)
 
 ## 💬 Questions?
 
