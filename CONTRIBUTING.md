@@ -154,6 +154,106 @@ git commit -m "feat: add my-speckit to registry"
 git push origin add-my-speckit
 ```
 
+## 🔍 Validation & Review Process
+
+Understanding how speckits are validated and reviewed:
+
+### Automated Validation (For Python Projects)
+
+When you submit a registration issue, our bot automatically:
+
+1. **Fetches Your Repository**
+   - Retrieves `pyproject.toml` from your repository
+   - Checks for `README.md` existence
+   - Validates repository accessibility
+
+2. **Validates Required Fields**
+   - ✅ `name` - Package name in `[project]`
+   - ✅ `version` - Version number in `[project]`
+   - ✅ `description` - Project description in `[project]`
+   - ⚠️  `[project.scripts]` - CLI commands (warning if missing)
+   - ⚠️  `README.md` - Documentation (warning if missing)
+
+3. **Extracts Metadata**
+   - Package name, version, description
+   - CLI command names
+   - License information
+   - Keywords/tags from `pyproject.toml`
+
+4. **Validation Result**
+   - ✅ **Pass**: Bot creates a PR automatically
+   - ❌ **Fail**: Bot comments on issue with error details
+
+### Manual Validation (For All Projects)
+
+For manual submissions or non-Python projects:
+
+1. **Basic Requirements Check**
+   - Has a public GitHub repository
+   - Has clear documentation (README)
+   - Has a CLI interface
+   - Has an open source license
+   - Follows spec-driven principles
+
+2. **Metadata Completeness**
+   - All required fields in `speckits.json` are filled
+   - Description is clear and searchable
+   - Tags are relevant
+
+3. **Quality Assessment**
+   - Documentation quality (examples, usage guide)
+   - Code quality (if visible)
+   - Community activity (issues, stars, commits)
+   - Maintenance status (recent updates)
+
+### Human Review Process
+
+All registrations (automated or manual) go through human review:
+
+1. **Maintainer Review** (1-3 days typically)
+   - Verify speckit truly follows spec-driven principles
+   - Check for duplicate or similar existing speckits
+   - Review description clarity and accuracy
+   - Ensure license compatibility
+   - Check for malicious content or spam
+
+2. **Quality Check**
+   - ✅ **Spec-Driven**: Does it use specs to drive generation/validation?
+   - ✅ **Usability**: Is documentation clear and helpful?
+   - ✅ **Completeness**: Are all metadata fields accurate?
+   - ✅ **Community Value**: Does it add value to the registry?
+
+3. **Decision**
+   - ✅ **Approve & Merge**: Speckit added to registry
+   - 💬 **Request Changes**: Feedback provided, resubmission welcome
+   - ❌ **Reject**: Doesn't meet requirements (with explanation)
+
+### What Happens After Approval?
+
+1. PR is merged into `main` branch
+2. `speckits.json` is updated
+3. Your speckit appears on the registry
+4. Issue is automatically closed
+5. You're notified of the merge
+
+### Common Rejection Reasons
+
+- ❌ Not truly spec-driven (specs are not the primary driver)
+- ❌ Malicious code or security concerns
+- ❌ Incomplete or missing documentation
+- ❌ License incompatibility (not open source)
+- ❌ Spam or low-quality submission
+- ❌ Duplicate of existing speckit
+
+### Appeals & Questions
+
+If your submission is rejected or you have questions:
+- Comment on your registration issue
+- Open a discussion thread
+- Contact maintainers through GitHub
+
+We're happy to help improve submissions to meet requirements!
+
 ## 🔄 Updating Your Speckit
 
 To update your speckit's metadata:
