@@ -34,7 +34,6 @@ jobs:
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-          GITHUB_OUTPUT: ${{ github.output }}
       
       - name: Update registry
         if: steps.validate.outputs.valid == 'true'
