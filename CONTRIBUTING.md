@@ -253,12 +253,22 @@ While "Spec-Driven" principle remains the same, it applies to different domains:
 - **Generic converters** - Format conversion without spec definitions
 - **Simple parsers** - Parse without spec-based generation/validation
 
-### 📚 Reference Projects
+### 📚 Resources
 
-Learn from these spec-driven projects:
-- [GitHub Spec-Kit](https://github.com/github/spec-kit) - Official toolkit for Spec-Driven Development workflow (46.6k+ stars)
-- [MetaSpec](https://github.com/ACNet-AI/MetaSpec) - Meta-specification framework for generating spec-driven toolkits
-- Additional examples coming soon
+**Reference Projects** - Learn from these spec-driven projects:
+- [GitHub Spec-Kit](https://github.com/github/spec-kit) - Official Spec-Driven Development toolkit (46.6k+ stars)
+- [MetaSpec](https://github.com/ACNet-AI/MetaSpec) - Meta-specification framework for generating speckits
+- [Example Speckit Metadata](./examples/example-speckit.json) - Required metadata format for registration
+
+**Documentation:**
+- [MetaSpec Documentation](https://github.com/ACNet-AI/MetaSpec/tree/main/docs) - If you choose to use MetaSpec
+- [Creating a Speckit with MetaSpec](https://github.com/ACNet-AI/MetaSpec/blob/main/docs/quickstart.md)
+
+**Building from scratch?** Just ensure your speckit:
+- Has a CLI interface with clear commands
+- Follows spec-driven principles (specs drive generation/validation)
+- Has good documentation (README with examples)
+- Includes an open source license
 
 ### 💡 Quick Self-Test
 
@@ -470,19 +480,6 @@ my-speckit = "my_speckit.cli:main"
 [project]
 description = "A toolkit for validating API specifications"
 ```
-
-## 📚 Resources
-
-- [Example Speckit Metadata](./examples/example-speckit.json) - Required metadata format for registration
-- [MetaSpec Framework](https://github.com/ACNet-AI/MetaSpec) - Optional framework for creating speckits
-- [MetaSpec Documentation](https://github.com/ACNet-AI/MetaSpec/tree/main/docs) - If you choose to use MetaSpec
-- [Creating a Speckit with MetaSpec](https://github.com/ACNet-AI/MetaSpec/blob/main/docs/quickstart.md)
-
-**Building from scratch?** No problem! Just ensure your speckit:
-- Has a CLI interface with clear commands
-- Follows spec-driven principles (specs drive generation/validation)
-- Has good documentation (README with examples)
-- Includes an open source license
 
 ## 💬 Questions?
 

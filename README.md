@@ -26,9 +26,12 @@ A **speckit** (specification toolkit) drives AI to generate content from specifi
 
 Whether you're building:
 - **SD-Development** - Specs → AI → Code, tests, implementations
-- **SD-Design** - Specs → AI → UI designs, architectures  
+- **SD-Design** - Specs → AI → UI designs, architectures
 - **SD-Protocol** - Specs → AI → Protocol definitions, standards
+- **SD-Documentation** - Specs → AI → Docs, guides, tutorials
 - **SD-API** - API specs → AI → Client SDKs, server implementations
+- **SD-Config** - Config specs → AI → System configurations
+- **SD-Test** - Test specs → AI → Test cases, scenarios
 - **SD-X** - Any domain where specs drive AI generation
 
 Speckits make specifications the **single source of truth** that drives AI.
