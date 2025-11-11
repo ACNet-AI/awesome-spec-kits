@@ -108,6 +108,15 @@ Have a speckit to share? **We'd love to have it!**
 - Working CLI commands in `[project.scripts]`
 - Open source license
 
+### 🔄 Updating Your Speckit
+
+Already registered? Simply submit a new registration issue with the same repository URL. The system automatically:
+- ✅ Detects it's an update (not a duplicate)
+- ✅ Shows what changed (version, description, tags, etc.)
+- ✅ Creates an update PR with clear changelog
+
+See [Update Guide](./CONTRIBUTING.md#-updating-your-speckit) for details.
+
 ### Manual Submission (Alternative)
 
 If you prefer the traditional way:

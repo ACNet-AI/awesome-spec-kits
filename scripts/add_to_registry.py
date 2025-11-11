@@ -7,8 +7,12 @@ import argparse
 from datetime import datetime
 
 
-def add_to_registry(metadata: dict, registry_file: str):
-    """Add or update speckit in registry."""
+def add_to_registry(metadata: dict, registry_file: str) -> dict:
+    """Add or update speckit in registry.
+    
+    Returns:
+        dict: Result information including 'is_update', 'old_version', 'changes'
+    """
     # Read existing registry
     try:
         with open(registry_file, 'r', encoding='utf-8') as f:
@@ -26,9 +30,11 @@ def add_to_registry(metadata: dict, registry_file: str):
     
     # Check if speckit already exists
     existing_index = None
+    old_speckit = None
     for i, speckit in enumerate(registry['speckits']):
         if speckit.get('name') == metadata['name']:
             existing_index = i
+            old_speckit = speckit.copy()
             break
     
     # Build speckit entry
@@ -46,10 +52,29 @@ def add_to_registry(metadata: dict, registry_file: str):
         'status': 'active'
     }
     
+    # Detect changes
+    result = {'is_update': False, 'old_version': None, 'changes': []}
+    
     # Add or update
     if existing_index is not None:
         # Update existing entry (preserve created_at)
         speckit_entry['created_at'] = registry['speckits'][existing_index].get('created_at', speckit_entry['created_at'])
+        
+        # Track changes
+        result['is_update'] = True
+        result['old_version'] = old_speckit.get('version', 'unknown')
+        
+        if old_speckit.get('version') != speckit_entry['version']:
+            result['changes'].append(f"Version: {old_speckit.get('version')} → {speckit_entry['version']}")
+        if old_speckit.get('description') != speckit_entry['description']:
+            result['changes'].append("Description updated")
+        if old_speckit.get('license') != speckit_entry['license']:
+            result['changes'].append(f"License: {old_speckit.get('license')} → {speckit_entry['license']}")
+        old_tags = set(old_speckit.get('tags', []))
+        new_tags = set(speckit_entry['tags'])
+        if old_tags != new_tags:
+            result['changes'].append("Tags updated")
+        
         registry['speckits'][existing_index] = speckit_entry
         print(f"✅ Updated {metadata['name']} in registry")
     else:
@@ -70,6 +95,8 @@ def add_to_registry(metadata: dict, registry_file: str):
     
     print(f"📝 Registry updated: {registry_file}")
     print(f"📊 Total speckits: {len(registry['speckits'])}")
+    
+    return result
 
 
 def main():
@@ -98,7 +125,18 @@ def main():
         'tags': args.tags
     }
     
-    add_to_registry(metadata, args.registry)
+    result = add_to_registry(metadata, args.registry)
+    
+    # Output to GitHub Actions
+    import os
+    github_output = os.environ.get('GITHUB_OUTPUT', '')
+    if github_output:
+        with open(github_output, 'a') as f:
+            f.write(f"is_update={str(result['is_update']).lower()}\n")
+            if result['is_update']:
+                f.write(f"old_version={result['old_version']}\n")
+                changes_text = '\n'.join(result['changes']) if result['changes'] else 'No changes detected'
+                f.write(f"changes<<EOF\n{changes_text}\nEOF\n")
 
 
 if __name__ == '__main__':

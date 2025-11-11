@@ -37,6 +37,7 @@ jobs:
       
       - name: Update registry
         if: steps.validate.outputs.valid == 'true'
+        id: update
         run: |
           python scripts/add_to_registry.py \
             --name "${{ steps.validate.outputs.name }}" \
@@ -54,21 +55,25 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "feat: add ${{ steps.validate.outputs.name }} to registry"
+          commit-message: "${{ steps.update.outputs.is_update == 'true' && format('chore: update {0} to v{1}', steps.validate.outputs.name, steps.validate.outputs.version) || format('feat: add {0} to registry', steps.validate.outputs.name) }}"
           branch: register-${{ steps.validate.outputs.name }}
           delete-branch: true
-          title: "feat: register ${{ steps.validate.outputs.name }}"
+          title: "${{ steps.update.outputs.is_update == 'true' && format('chore: update {0} to v{1}', steps.validate.outputs.name, steps.validate.outputs.version) || format('feat: register {0}', steps.validate.outputs.name) }}"
           body: |
-            ## 🚀 Auto-generated Registration
+            ## ${{ steps.update.outputs.is_update == 'true' && '🔄 Auto-generated Update' || '🚀 Auto-generated Registration' }}
             
             Closes #${{ github.event.issue.number }}
             
             **Speckit**: `${{ steps.validate.outputs.name }}`  
-            **Version**: `${{ steps.validate.outputs.version }}`  
+            **Version**: `${{ steps.validate.outputs.version }}`${{ steps.update.outputs.is_update == 'true' && format(' (was {0})', steps.update.outputs.old_version) || '' }}  
             **Repository**: ${{ steps.validate.outputs.repository }}  
             **CLI**: `${{ steps.validate.outputs.cli_command }}`  
             **License**: ${{ steps.validate.outputs.license }}
+            ${{ steps.update.outputs.is_update == 'true' && format('
+            ### 📝 Changes
             
+            {0}
+            ', steps.update.outputs.changes) || '' }}
             ### ✅ Validation Results
             
             ${{ steps.validate.outputs.summary }}
@@ -83,11 +88,17 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
+            const isUpdate = '${{ steps.update.outputs.is_update }}' === 'true';
+            const emoji = isUpdate ? '🔄' : '✅';
+            const action = isUpdate ? 'Update' : 'Registration';
+            const oldVersion = '${{ steps.update.outputs.old_version }}';
+            const versionText = isUpdate ? `**Version**: \`${{ steps.validate.outputs.version }}\` (was ${oldVersion})` : `**Version**: \`${{ steps.validate.outputs.version }}\``;
+            
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '✅ **Validation passed!**\n\nA PR has been created automatically. Maintainers will review and merge it soon.\n\n**Speckit**: `${{ steps.validate.outputs.name }}`\n**Version**: `${{ steps.validate.outputs.version }}`'
+              body: `${emoji} **Validation passed!**\n\nA PR for ${action.toLowerCase()} has been created automatically. Maintainers will review and merge it soon.\n\n**Speckit**: \`${{ steps.validate.outputs.name }}\`\n${versionText}`
             })
       
       - name: Comment on issue (failure)

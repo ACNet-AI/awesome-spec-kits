@@ -396,20 +396,194 @@ We're happy to help improve submissions to meet requirements!
 
 ## 🔄 Updating Your Speckit
 
-To update your speckit's metadata:
+Have you already registered your speckit and need to update it? No problem! Our system makes updates just as easy as initial registration.
 
-### Via Automated System
+### Why Update?
 
-1. Update your `pyproject.toml` (version, description, etc.)
-2. Create a new registration issue
-3. The bot will update the existing entry
+You might need to update your speckit entry when:
+- 🎉 **New version released** - Update version number
+- 📝 **Description improved** - Better explain what your speckit does
+- 🏷️ **Tags changed** - Add or modify keywords
+- 🔧 **CLI commands updated** - New or renamed commands
+- 📄 **License changed** - Updated license information
 
-### Manual Update
+### What Gets Updated?
 
-1. Fork and clone (if you haven't)
-2. Edit your entry in `speckits.json`
-3. Update `version` and `updated_at` fields
-4. Create a PR with your changes
+The following fields will be automatically updated from your `pyproject.toml`:
+- ✅ `version` - Package version
+- ✅ `description` - Project description
+- ✅ `cli_command` - CLI commands from `[project.scripts]`
+- ✅ `license` - License information
+- ✅ `tags` - Keywords from your project
+- ✅ `updated_at` - Automatically set to current date
+
+**Note**: The `created_at` date will be preserved from your original registration.
+
+### Method 1: Via Automated System (Recommended for Python Projects)
+
+This is the easiest way to update your registered speckit:
+
+#### Step 1: Update Your Repository
+
+First, update the information in your `pyproject.toml`:
+
+```toml
+[project]
+name = "my-speckit"
+version = "2.0.0"  # ← Update version
+description = "New improved description"  # ← Update description
+keywords = ["api", "validation", "new-tag"]  # ← Update tags
+
+[project.scripts]
+my-speckit = "my_speckit.cli:main"
+```
+
+Commit and push these changes to your GitHub repository.
+
+#### Step 2: Submit Update Issue
+
+1. Go to [**Create Registration Issue**](../../issues/new?template=register-speckit.yml)
+2. Fill in your speckit's GitHub repository URL (same as original registration)
+3. Check the "This is an **update** to an existing speckit" checkbox
+4. Submit the issue
+
+#### Step 3: Automated Update
+
+Our bot will:
+- ✅ Detect that your speckit is already registered
+- ✅ Fetch the updated `pyproject.toml`
+- ✅ Compare with the existing entry
+- ✅ Create a PR with title: `chore: update your-speckit to v2.0.0`
+- ✅ Show what changed in the PR description
+
+#### Step 4: Review and Merge
+
+- The PR will show exactly what changed (version, description, tags, etc.)
+- Maintainers will review and merge (typically within 1-3 days)
+- Your registry entry will be updated!
+
+### Method 2: Manual Update (For All Projects)
+
+If you prefer manual control or your project is not in Python:
+
+#### Step 1: Fork and Clone
+
+```bash
+# If you haven't already
+git clone https://github.com/YOUR_USERNAME/awesome-spec-kits.git
+cd awesome-spec-kits
+```
+
+#### Step 2: Find and Update Your Entry
+
+Open `speckits.json` and find your speckit by name:
+
+```json
+{
+  "name": "my-speckit",
+  "version": "1.0.0",  // ← Update this
+  "description": "Old description",  // ← Update this
+  "repository": "https://github.com/username/my-speckit",
+  "pypi_package": "my-speckit",
+  "cli_command": "my-speckit",
+  "license": "MIT",
+  "tags": ["api", "validation"],  // ← Update this
+  "created_at": "2025-11-01",  // ← Keep this unchanged
+  "updated_at": "2025-11-01",  // ← Update to today
+  "status": "active"
+}
+```
+
+Update the fields you want to change, and **always update** `updated_at` to the current date.
+
+#### Step 3: Create Pull Request
+
+```bash
+# Create a branch
+git checkout -b update-my-speckit
+
+# Commit your changes
+git add speckits.json
+git commit -m "chore: update my-speckit to v2.0.0"
+
+# Push and create PR
+git push origin update-my-speckit
+```
+
+In your PR description, explain what you updated and why.
+
+### Update Best Practices
+
+#### DO ✅
+- **Update `pyproject.toml` first** before submitting update issue
+- **Increment version number** following semantic versioning
+- **Improve descriptions** to be more searchable and clear
+- **Add relevant tags** that users might search for
+- **Test your CLI** to ensure commands still work
+
+#### DON'T ❌
+- **Don't change `created_at`** - This is your original registration date
+- **Don't forget `updated_at`** - Always update to current date
+- **Don't change `name`** - Package name should remain consistent
+- **Don't change `repository`** - Repository URL should not change
+
+### Frequency of Updates
+
+How often should you update?
+
+- **Major releases** - Always update (e.g., v1.0.0 → v2.0.0)
+- **Minor releases with new features** - Recommended (e.g., v1.1.0 → v1.2.0)
+- **Patch releases** - Optional (e.g., v1.0.1 → v1.0.2)
+- **Description/tags improvements** - Anytime you have better wording
+
+### Troubleshooting Updates
+
+#### "Bot says speckit not found"
+
+**Problem**: You're trying to update but bot treats it as new registration.
+
+**Solution**: Ensure the `name` field in your `pyproject.toml` exactly matches the registered name. Package names are case-sensitive.
+
+#### "Changes not reflected"
+
+**Problem**: Updated `pyproject.toml` but PR shows old information.
+
+**Solution**: 
+1. Ensure changes are committed and pushed to GitHub
+2. Wait a few minutes for GitHub to update the raw file
+3. Try submitting the update issue again
+
+#### "Version conflict"
+
+**Problem**: Your new version is lower than the registered version.
+
+**Solution**: Ensure you're incrementing the version number, not decrementing. Follow semantic versioning: `MAJOR.MINOR.PATCH`
+
+### Quick Reference
+
+Update workflow in 3 simple steps:
+
+```bash
+# 1. Update pyproject.toml (version, description, tags, etc.) and push
+vim pyproject.toml && git commit -am "chore: bump version" && git push
+
+# 2. Submit registration issue with same repository URL
+# → https://github.com/ACNet-AI/awesome-spec-kits/issues/new?template=register-speckit.yml
+
+# 3. Bot auto-detects update and creates PR with changes
+```
+
+That's it! The system handles everything else automatically.
+
+### Need Help?
+
+If you encounter issues updating your speckit:
+- Comment on your update issue
+- Check the [Common Issues](#-common-issues) section
+- Open a discussion thread
+- Contact maintainers
+
+We're here to help make updates smooth and easy!
 
 ## 🗑️ Removing Your Speckit
 

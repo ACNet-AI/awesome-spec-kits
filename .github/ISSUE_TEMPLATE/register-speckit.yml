@@ -8,18 +8,23 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 📦 Register Your Speckit
+        ## 📦 Register or Update Your Speckit
         
         Our bot will automatically:
         1. ✅ Validate your speckit
         2. ✅ Extract metadata from pyproject.toml
-        3. ✅ Create a PR to add it to the registry
+        3. ✅ Create a PR to add or update it in the registry
         
-        **Requirements**:
+        **For New Registration**:
         - Valid `pyproject.toml` with required fields (name, version, description)
         - README.md with documentation
         - Open source license (MIT, Apache, BSD, etc.)
         - Working CLI commands
+        
+        **For Updates**:
+        - Simply submit the same repository URL again
+        - The bot will automatically detect and update your existing entry
+        - Update `version`, `description`, `tags`, or other metadata in your `pyproject.toml` first
 
   - type: input
     id: repository
@@ -60,7 +65,7 @@ body:
           required: true
         - label: My speckit has an open source license
           required: true
-        - label: I am the maintainer or have permission to register this speckit
+        - label: I am the maintainer or have permission to register/update this speckit
           required: true
 
   - type: markdown
@@ -72,9 +77,9 @@ body:
         
         After you submit this issue:
         1. Our bot will validate your speckit
-        2. If valid, a PR will be automatically created
+        2. If valid, a PR will be automatically created (new registration or update)
         3. Maintainers will review and merge the PR
-        4. Your speckit will appear in the registry!
+        4. Your speckit will appear in (or be updated in) the registry!
         
         If validation fails, the bot will comment with details on what needs to be fixed.
 
