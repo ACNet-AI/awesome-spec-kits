@@ -36,6 +36,8 @@ Ensure your speckit meets these requirements:
 3. Optionally provide PyPI package name
 4. Submit the issue
 
+> **💡 Note**: Issues created using the template should automatically receive the `registration` label. If you create an issue manually or the label is missing, the bot will automatically add it when your issue title starts with `[Register]`.
+
 ### Step 3: Automated Validation
 
 Our bot will automatically:
