@@ -35,16 +35,25 @@ def parse_issue_body(body: str) -> Dict:
 def fetch_file_from_github(owner: str, repo_name: str, file_path: str, branch: str = 'main') -> Optional[str]:
     """Fetch a file from GitHub repository."""
     url = f"https://raw.githubusercontent.com/{owner}/{repo_name}/{branch}/{file_path}"
+    headers = {
+        'User-Agent': 'awesome-spec-kits-registry-bot/1.0'
+    }
     try:
-        response = requests.get(url, timeout=10)
+        response = requests.get(url, headers=headers, timeout=10)
         if response.status_code == 200:
             return response.text
         elif response.status_code == 404 and branch == 'main':
             # Try master branch
             return fetch_file_from_github(owner, repo_name, file_path, 'master')
         return None
+    except requests.exceptions.Timeout:
+        print(f"⏱️ Timeout fetching {file_path} from {owner}/{repo_name}", file=sys.stderr)
+        return None
+    except requests.exceptions.RequestException as e:
+        print(f"🌐 Network error fetching {file_path}: {e}", file=sys.stderr)
+        return None
     except Exception as e:
-        print(f"Error fetching {file_path}: {e}", file=sys.stderr)
+        print(f"❌ Unexpected error fetching {file_path}: {e}", file=sys.stderr)
         return None
 
 
@@ -127,11 +136,11 @@ def validate_speckit(parsed_info: Dict) -> Tuple[bool, Dict, str]:
     
     # Validate required fields
     if not project.get('name'):
-        errors.append("Missing `name` in [project]")
+        errors.append("Missing required field `name` in [project] section")
     if not project.get('version'):
-        errors.append("Missing `version` in [project]")
+        errors.append("Missing required field `version` in [project] section")
     if not project.get('description'):
-        errors.append("Missing `description` in [project]")
+        errors.append("Missing required field `description` in [project] section")
     
     # Check CLI commands
     scripts = project.get('scripts', {})

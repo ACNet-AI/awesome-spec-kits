@@ -17,7 +17,7 @@ jobs:
     
     steps:
       - name: Add registration label if missing
-        if: "!contains(github.event.issue.labels.*.name, 'registration')"
+        if: ${{ !contains(github.event.issue.labels.*.name, 'registration') }}
         uses: actions/github-script@v7
         with:
           script: |

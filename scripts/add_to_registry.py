@@ -3,6 +3,7 @@
 Add speckit to registry JSON file.
 """
 import json
+import sys
 import argparse
 from datetime import datetime
 
@@ -18,11 +19,18 @@ def add_to_registry(metadata: dict, registry_file: str) -> dict:
         with open(registry_file, 'r', encoding='utf-8') as f:
             registry = json.load(f)
     except FileNotFoundError:
+        print(f"⚠️  Registry file not found, creating new one: {registry_file}", file=sys.stderr)
         registry = {
             'version': '1.0',
             'last_updated': datetime.utcnow().isoformat() + 'Z',
             'speckits': []
         }
+    except json.JSONDecodeError as e:
+        print(f"❌ Invalid JSON in registry file: {e}", file=sys.stderr)
+        raise
+    except Exception as e:
+        print(f"❌ Error reading registry file: {e}", file=sys.stderr)
+        raise
     
     # Ensure speckits key exists
     if 'speckits' not in registry:
@@ -89,12 +97,18 @@ def add_to_registry(metadata: dict, registry_file: str) -> dict:
     registry['last_updated'] = datetime.utcnow().isoformat() + 'Z'
     
     # Write back to file
-    with open(registry_file, 'w', encoding='utf-8') as f:
-        json.dump(registry, f, indent=2, ensure_ascii=False)
-        f.write('\n')  # Add trailing newline
-    
-    print(f"📝 Registry updated: {registry_file}")
-    print(f"📊 Total speckits: {len(registry['speckits'])}")
+    try:
+        with open(registry_file, 'w', encoding='utf-8') as f:
+            json.dump(registry, f, indent=2, ensure_ascii=False)
+            f.write('\n')  # Add trailing newline
+        print(f"📝 Registry updated: {registry_file}")
+        print(f"📊 Total speckits: {len(registry['speckits'])}")
+    except IOError as e:
+        print(f"❌ Error writing to registry file: {e}", file=sys.stderr)
+        raise
+    except Exception as e:
+        print(f"❌ Unexpected error updating registry: {e}", file=sys.stderr)
+        raise
     
     return result
 
