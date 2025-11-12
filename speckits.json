@@ -1,6 +1,25 @@
 {
   "version": "1.0",
-  "last_updated": "2025-11-09T00:00:00Z",
-  "speckits": []
+  "last_updated": "2025-11-12T03:13:10.106879Z",
+  "speckits": [
+    {
+      "name": "mcp-speckit",
+      "version": "0.1.0",
+      "description": "AI Agent lifecycle management toolkit for MCP Server Lifecycle Specification",
+      "repository": "https://github.com/ACNet-AI/mcp-spec-kit",
+      "pypi_package": "No",
+      "cli_command": "mcp_speckit",
+      "license": "MIT",
+      "tags": [
+        "mcp",
+        "spec-driven",
+        "lifecycle",
+        "validation",
+        "ai-agent"
+      ],
+      "created_at": "2025-11-12",
+      "updated_at": "2025-11-12",
+      "status": "active"
+    }
+  ]
 }
-
