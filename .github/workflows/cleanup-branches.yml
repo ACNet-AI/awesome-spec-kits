@@ -1,0 +1,38 @@
+name: Cleanup Merged Branches
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'register-')
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Delete merged branch
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branchName = context.payload.pull_request.head.ref;
+            console.log(`Deleting branch: ${branchName}`);
+            
+            try {
+              await github.rest.git.deleteRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: `heads/${branchName}`
+              });
+              console.log(`✅ Successfully deleted branch ${branchName}`);
+            } catch (error) {
+              if (error.status === 404) {
+                console.log(`ℹ️  Branch ${branchName} already deleted`);
+              } else {
+                console.error(`❌ Error deleting branch: ${error.message}`);
+                throw error;
+              }
+            }
+
