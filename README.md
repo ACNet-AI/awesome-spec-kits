@@ -95,18 +95,20 @@ Have a speckit to share? **We'd love to have it!**
 
 1. Go to [**Create Registration Issue**](../../issues/new?template=register-speckit.yml)
 2. Fill in your speckit's GitHub repository URL
-3. Submit the issue
+3. Confirm you have permission to register
 4. **Done!** Our bot will:
-   - ✅ Validate your speckit
+   - ✅ Automatically validate your speckit
    - ✅ Extract metadata from `pyproject.toml`
    - ✅ Create a PR automatically
    - ✅ Notify you of the result
 
-**Requirements**:
+**What the bot validates** (automatically):
 - Valid `pyproject.toml` with name, version, description
 - `README.md` with documentation
 - Working CLI commands in `[project.scripts]`
 - Open source license
+
+**What you confirm**: Permission to register/update this speckit
 
 ### 🔄 Updating Your Speckit
 

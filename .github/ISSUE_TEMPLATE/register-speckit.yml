@@ -52,21 +52,40 @@ body:
         - Feature 2
         - Feature 3
 
-  - type: checkboxes
-    id: checklist
+  - type: markdown
     attributes:
-      label: Requirements Checklist
+      value: |
+        ## 🤖 Automated Validation
+        
+        After you submit this issue, the bot will automatically verify:
+        - ✅ Valid `pyproject.toml` (name, version, description)
+        - ✅ `README.md` exists with adequate documentation
+        - ✅ CLI commands defined in `[project.scripts]`
+        - ✅ Open source license present
+        
+        **You don't need to manually verify these - the bot handles it!**
+        
+        If any requirement is missing, the bot will comment with:
+        - Clear error messages
+        - What's missing
+        - How to fix it
+
+  - type: checkboxes
+    id: authorization
+    attributes:
+      label: Authorization & Confirmation
       options:
-        - label: My speckit has a valid `pyproject.toml` with name, version, and description
-          required: true
-        - label: My speckit has `README.md` documentation
-          required: true
-        - label: My speckit has working CLI commands defined in `[project.scripts]`
-          required: true
-        - label: My speckit has an open source license
-          required: true
         - label: I am the maintainer or have permission to register/update this speckit
           required: true
+
+  - type: checkboxes
+    id: optional-self-check
+    attributes:
+      label: Optional Self-Check (Bot will verify these)
+      description: These are optional - the bot will validate them after submission
+      options:
+        - label: I have verified my speckit meets the technical requirements
+          required: false
 
   - type: markdown
     attributes:

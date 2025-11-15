@@ -34,9 +34,12 @@ Ensure your speckit meets these requirements:
 1. Go to [**Create Registration Issue**](../../issues/new?template=register-speckit.yml)
 2. Fill in your speckit's GitHub repository URL
 3. Optionally provide PyPI package name
-4. Submit the issue
+4. **Check the authorization box** - Confirm you have permission to register
+5. Submit the issue
 
-> **💡 Note**: Issues created using the template should automatically receive the `registration` label. If you create an issue manually or the label is missing, the bot will automatically add it when your issue title starts with `[Register]`.
+> **💡 Note**: The bot will automatically validate all technical requirements (pyproject.toml, README, CLI commands, license). You only need to confirm your authorization to register the speckit.
+
+> **💡 Label**: Issues created using the template should automatically receive the `registration` label. If you create an issue manually or the label is missing, the bot will automatically add it when your issue title starts with `[Register]`.
 
 ### Step 3: Automated Validation
 
@@ -446,7 +449,7 @@ Commit and push these changes to your GitHub repository.
 
 1. Go to [**Create Registration Issue**](../../issues/new?template=register-speckit.yml)
 2. Fill in your speckit's GitHub repository URL (same as original registration)
-3. Check the "This is an **update** to an existing speckit" checkbox
+3. Confirm your authorization (required checkbox)
 4. Submit the issue
 
 #### Step 3: Automated Update
