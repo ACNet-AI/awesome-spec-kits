@@ -36,14 +36,34 @@ def add_to_registry(metadata: dict, registry_file: str) -> dict:
     if 'speckits' not in registry:
         registry['speckits'] = []
     
-    # Check if speckit already exists
+    # Check if speckit already exists (by repository URL - primary identifier)
     existing_index = None
     old_speckit = None
     for i, speckit in enumerate(registry['speckits']):
-        if speckit.get('name') == metadata['name']:
+        if speckit.get('repository') == metadata['repository']:
             existing_index = i
             old_speckit = speckit.copy()
             break
+    
+    # Check for name conflicts (different repository using same name)
+    for speckit in registry['speckits']:
+        if (speckit.get('name') == metadata['name'] and 
+            speckit.get('repository') != metadata['repository']):
+            error_msg = f"""❌ **Package name conflict**
+
+The package name `{metadata['name']}` is already registered by:
+- Repository: {speckit['repository']}
+- Registered on: {speckit.get('created_at', 'unknown')}
+
+**Suggestions:**
+- Add a prefix: `myorg-{metadata['name']}`, `my-{metadata['name']}`
+- Use a more specific name: `{metadata['name']}-enhanced`, `{metadata['name']}-pro`
+- Add a domain qualifier: `api-{metadata['name']}`, `web-{metadata['name']}`
+
+Package names must be unique to avoid conflicts in PyPI and CLI commands.
+"""
+            print(error_msg, file=sys.stderr)
+            raise ValueError(f"Package name '{metadata['name']}' is already registered by {speckit['repository']}")
     
     # Build speckit entry
     speckit_entry = {

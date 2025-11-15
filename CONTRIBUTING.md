@@ -107,6 +107,27 @@ To ensure good user experience:
 - **CLI command**: Should match package name or be intuitive
 - **Repository**: Public GitHub repository with clear purpose
 
+### Package Name Uniqueness ⚠️
+
+**Package names must be unique across all registered speckits.**
+
+- ✅ `api-spec-kit` (first to register)
+- ❌ `api-spec-kit` (duplicate - will be rejected)
+- ✅ `acnet-api-spec-kit` (unique with org prefix)
+- ✅ `rest-api-spec-kit` (more specific name)
+
+**Why uniqueness matters:**
+- **PyPI requires unique package names** - Only one package can use a name on PyPI
+- **Prevents CLI command conflicts** - Avoids confusion when installing multiple speckits
+- **Improves discoverability** - Users can easily find and identify speckits
+
+**If your desired name is taken:**
+1. **Add an organization prefix**: `myorg-package-name`, `yourname-package-name`
+2. **Be more specific**: `rest-api-validator` instead of `api-validator`
+3. **Add a qualifier**: `package-name-pro`, `advanced-package-name`, `package-name-toolkit`
+
+The validation bot will automatically check for name conflicts and provide suggestions if your chosen name is already registered.
+
 ## 🔧 Manual Registration (Alternative)
 
 **For all languages and frameworks** - Use this method if:

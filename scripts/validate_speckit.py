@@ -113,6 +113,37 @@ def parse_toml_simple(content: str) -> Dict:
         return result
 
 
+def check_name_conflict(package_name: str, repository_url: str) -> Optional[str]:
+    """Check if package name conflicts with existing registry entries."""
+    try:
+        import requests
+        # Fetch current registry from GitHub
+        registry_url = "https://raw.githubusercontent.com/ACNet-AI/awesome-spec-kits/main/speckits.json"
+        response = requests.get(registry_url, timeout=10)
+        if response.status_code == 200:
+            registry = response.json()
+            for speckit in registry.get('speckits', []):
+                if (speckit.get('name') == package_name and 
+                    speckit.get('repository') != repository_url):
+                    return f"""⚠️ **Package name conflict detected**
+
+The package name `{package_name}` is already registered by:
+- Repository: {speckit['repository']}
+- Registered on: {speckit.get('created_at', 'unknown')}
+
+**Please choose a different name. Suggestions:**
+- Add a prefix: `myorg-{package_name}`, `my-{package_name}`
+- Use a more specific name: `{package_name}-enhanced`, `{package_name}-pro`
+- Add a domain qualifier: `api-{package_name}`, `web-{package_name}`
+
+Package names must be unique to avoid conflicts in PyPI and CLI commands.
+"""
+    except Exception:
+        # If we can't check, don't fail validation - let add_to_registry catch it
+        pass
+    return None
+
+
 def validate_speckit(parsed_info: Dict) -> Tuple[bool, Dict, str]:
     """Validate speckit and extract metadata."""
     errors = []
@@ -141,6 +172,12 @@ def validate_speckit(parsed_info: Dict) -> Tuple[bool, Dict, str]:
         errors.append("Missing required field `version` in [project] section")
     if not project.get('description'):
         errors.append("Missing required field `description` in [project] section")
+    
+    # Check for name conflicts early (before other checks)
+    if project.get('name'):
+        name_conflict = check_name_conflict(project['name'], parsed_info['repo_url'])
+        if name_conflict:
+            errors.append(name_conflict)
     
     # Check CLI commands
     scripts = project.get('scripts', {})
