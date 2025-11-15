@@ -22,3 +22,6 @@ Thumbs.db
 *.tmp
 *.bak
 
+# Internal documentation (not for public repo)
+docs/internal/
+
