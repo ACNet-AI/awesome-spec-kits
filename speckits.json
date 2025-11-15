@@ -1,7 +1,24 @@
 {
   "version": "1.0",
-  "last_updated": "2025-11-12T03:13:10.106879Z",
+  "last_updated": "2025-11-15T05:31:18.038808Z",
   "speckits": [
+    {
+      "name": "marketing-spec-kit",
+      "version": "0.1.0",
+      "description": "Generic speckit - manage specifications for any domain",
+      "repository": "https://github.com/ACNet-AI/marketing-spec-kit",
+      "pypi_package": "No",
+      "cli_command": "marketing_spec_kit",
+      "license": "MIT",
+      "tags": [
+        "generic",
+        "spec-driven",
+        "spec"
+      ],
+      "created_at": "2025-11-15",
+      "updated_at": "2025-11-15",
+      "status": "active"
+    },
     {
       "name": "mcp-speckit",
       "version": "0.1.0",
