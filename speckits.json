@@ -1,22 +1,26 @@
 {
   "version": "1.0",
-  "last_updated": "2025-11-15T05:31:18.038808Z",
+  "last_updated": "2025-11-16T01:11:06.457318Z",
   "speckits": [
     {
       "name": "marketing-spec-kit",
-      "version": "0.1.0",
-      "description": "Generic speckit - manage specifications for any domain",
+      "version": "2.0.0",
+      "description": "Specification Toolkit for Marketing Operations - Transform marketing chaos into structured, AI-driven workflows",
       "repository": "https://github.com/ACNet-AI/marketing-spec-kit",
       "pypi_package": "No",
       "cli_command": "marketing_spec_kit",
       "license": "MIT",
       "tags": [
-        "generic",
+        "marketing",
         "spec-driven",
-        "spec"
+        "marketing-operations",
+        "campaign-management",
+        "marketing-automation",
+        "ai-agents",
+        "workflow"
       ],
       "created_at": "2025-11-15",
-      "updated_at": "2025-11-15",
+      "updated_at": "2025-11-16",
       "status": "active"
     },
     {
