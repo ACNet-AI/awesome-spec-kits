@@ -16,7 +16,9 @@
         "/speckit.plan",
         "/speckit.tasks",
         "/speckit.implement",
-        "/speckit.review"
+        "/speckit.clarify",
+        "/speckit.analyze",
+        "/speckit.checklist"
       ],
       "license": "MIT",
       "tags": [
