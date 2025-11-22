@@ -38,9 +38,14 @@
       "version": "0.16.0",
       "description": "AI-native system for spec-driven development (TypeScript)",
       "repository": "https://github.com/Fission-AI/OpenSpec",
-      "package": "N/A",
+      "package": "@fission-ai/openspec",
       "cli_command": "openspec",
       "sd_type": ["sdd"],
+      "slash_commands": [
+        "/openspec:proposal",
+        "/openspec:apply",
+        "/openspec:archive"
+      ],
       "license": "MIT",
       "tags": [
         "openspec",
