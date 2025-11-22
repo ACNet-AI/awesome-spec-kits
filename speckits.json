@@ -1,22 +1,28 @@
 {
   "version": "1.0",
-  "last_updated": "2025-11-15T05:31:18.038808Z",
+  "last_updated": "2025-11-22T06:00:00.000000Z",
   "speckits": [
     {
       "name": "marketing-spec-kit",
-      "version": "0.1.0",
-      "description": "Generic speckit - manage specifications for any domain",
+      "version": "0.4.0",
+      "description": "Specification Toolkit for Marketing Operations - Transform marketing chaos into structured, AI-driven workflows",
       "repository": "https://github.com/ACNet-AI/marketing-spec-kit",
-      "pypi_package": "No",
+      "pypi_package": "marketing-spec-kit",
       "cli_command": "marketing_spec_kit",
+      "sd_type": ["SDM"],
+      "slash_commands": ["/init", "/validate", "/generate", "/plan"],
       "license": "MIT",
       "tags": [
-        "generic",
+        "marketing",
         "spec-driven",
-        "spec"
+        "marketing-operations",
+        "campaign-management",
+        "marketing-automation",
+        "ai-agents",
+        "workflow"
       ],
       "created_at": "2025-11-15",
-      "updated_at": "2025-11-15",
+      "updated_at": "2025-11-22",
       "status": "active"
     },
     {
@@ -24,8 +30,10 @@
       "version": "0.1.0",
       "description": "AI Agent lifecycle management toolkit for MCP Server Lifecycle Specification",
       "repository": "https://github.com/ACNet-AI/mcp-spec-kit",
-      "pypi_package": "No",
+      "pypi_package": "mcp-speckit",
       "cli_command": "mcp_speckit",
+      "sd_type": ["SDD", "SDS"],
+      "slash_commands": ["/validate", "/test", "/deploy"],
       "license": "MIT",
       "tags": [
         "mcp",
@@ -35,7 +43,7 @@
         "ai-agent"
       ],
       "created_at": "2025-11-12",
-      "updated_at": "2025-11-12",
+      "updated_at": "2025-11-22",
       "status": "active"
     }
   ]

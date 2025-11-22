@@ -110,10 +110,12 @@ def parse_toml_simple(content: str) -> Dict:
             if scripts:
                 result['project']['scripts'] = scripts
         
-        # Extract slash commands from [tool.speckit]
+        # Extract slash commands and sd_type from [tool.speckit]
         tool_speckit_match = re.search(r'\[tool\.speckit\](.*?)(?=\[|$)', content, re.DOTALL)
         if tool_speckit_match:
             tool_text = tool_speckit_match.group(1)
+            
+            # Extract slash_commands
             slash_match = re.search(r'slash[_-]commands\s*=\s*\[(.*?)\]', tool_text, re.DOTALL)
             if slash_match:
                 slash_text = slash_match.group(1)
@@ -124,6 +126,18 @@ def parse_toml_simple(content: str) -> Dict:
                     if 'speckit' not in result['tool']:
                         result['tool']['speckit'] = {}
                     result['tool']['speckit']['slash_commands'] = slash_commands
+            
+            # Extract sd_type
+            sd_type_match = re.search(r'sd[_-]type\s*=\s*\[(.*?)\]', tool_text, re.DOTALL)
+            if sd_type_match:
+                sd_type_text = sd_type_match.group(1)
+                sd_types = re.findall(r'["\']([^"\']+)["\']', sd_type_text)
+                if sd_types:
+                    if 'tool' not in result:
+                        result['tool'] = {}
+                    if 'speckit' not in result['tool']:
+                        result['tool']['speckit'] = {}
+                    result['tool']['speckit']['sd_type'] = sd_types
         
         return result
 
@@ -220,6 +234,13 @@ def validate_speckit(parsed_info: Dict) -> Tuple[bool, Dict, str]:
     elif 'slash-commands' in project:
         slash_commands = project.get('slash-commands', [])
     
+    # Extract sd_type (Spec-Driven type) if available
+    sd_type = []
+    if 'sd_type' in tool_speckit:
+        sd_type = tool_speckit.get('sd_type', [])
+    elif 'sd-type' in project:
+        sd_type = project.get('sd-type', [])
+    
     # Build metadata
     metadata = {
         'name': project['name'],
@@ -228,6 +249,7 @@ def validate_speckit(parsed_info: Dict) -> Tuple[bool, Dict, str]:
         'repository': parsed_info['repo_url'],
         'pypi_package': parsed_info['pypi_name'] or project['name'],
         'cli_command': list(scripts.keys())[0] if scripts else project['name'],
+        'sd_type': ','.join(sd_type) if sd_type else '',
         'slash_commands': ','.join(slash_commands) if slash_commands else '',
         'license': project.get('license', {}).get('text', 'Unknown'),
         'tags': ','.join(project.get('keywords', [])),

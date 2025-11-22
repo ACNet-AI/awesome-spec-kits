@@ -158,6 +158,7 @@ The registry is stored in `speckits.json`. Add your entry:
   "repository": "https://github.com/username/my-speckit",
   "pypi_package": "my-speckit",
   "cli_command": "my-speckit",
+  "sd_type": ["SDD"],
   "slash_commands": ["/validate", "/generate"],
   "license": "MIT",
   "tags": ["api", "validation"],
@@ -632,6 +633,7 @@ The registry stores these fields for each speckit:
 | `repository` | string | ✅ | GitHub repository URL |
 | `pypi_package` | string | ✅ | PyPI package name |
 | `cli_command` | string | ✅ | Main CLI command name |
+| `sd_type` | array | ⚠️ | Spec-Driven type(s): "SDD" (Development), "SDS" (Specification), "SDM" (Marketing) |
 | `slash_commands` | array | ⚠️ | Slash commands supported (e.g., ["/validate", "/generate"]) |
 | `license` | string | ✅ | License type (MIT, Apache, etc.) |
 | `tags` | array | ⚠️ | Keywords for search (from `pyproject.toml`) |
@@ -639,12 +641,34 @@ The registry stores these fields for each speckit:
 | `updated_at` | string | ✅ | Last update date (YYYY-MM-DD) |
 | `status` | string | ✅ | Status: "active", "deprecated", "archived" |
 
+## 🎯 Spec-Driven Type Classification
+
+Classify your speckit by its primary Spec-Driven type(s):
+
+| Type | Full Name | Description | Examples |
+|------|-----------|-------------|----------|
+| **SDD** | Spec-Driven Development | Generate code, tests, implementations from specs | API generators, Protocol Buffers, GraphQL codegen |
+| **SDS** | Spec-Driven Specification | Generate or validate specifications themselves | Schema validators, Spec generators, Conformance checkers |
+| **SDM** | Spec-Driven Marketing | Transform marketing operations with spec-driven workflows | Campaign management, Content automation, Marketing ops |
+
+**In your `pyproject.toml`**:
+```toml
+[tool.speckit]
+sd_type = ["SDD"]  # or ["SDS"], ["SDM"], or multiple ["SDD", "SDS"]
+```
+
+**Guidelines**:
+- Most speckits are **SDD** (development-focused)
+- Use **SDS** if your tool generates or validates specifications
+- Use **SDM** for marketing operation toolkits
+- A speckit can have multiple types (e.g., both SDD and SDS)
+
 ## 🏷️ Tag Guidelines
 
 Use clear, searchable tags from your `pyproject.toml`:
 
 **Domain Tags**
-- `api`, `protocol`, `config`, `database`, `documentation`
+- `api`, `protocol`, `config`, `database`, `documentation`, `marketing`
 
 **Technology Tags**
 - `yaml`, `json`, `xml`, `toml`, `openapi`, `graphql`
