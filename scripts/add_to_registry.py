@@ -80,6 +80,12 @@ Package names must be unique to avoid conflicts in PyPI and CLI commands.
         'status': 'active'
     }
     
+    # Add slash_commands if provided
+    if metadata.get('slash_commands'):
+        slash_commands = metadata['slash_commands'].split(',') if isinstance(metadata['slash_commands'], str) else metadata['slash_commands']
+        if slash_commands and slash_commands != ['']:
+            speckit_entry['slash_commands'] = slash_commands
+    
     # Detect changes
     result = {'is_update': False, 'old_version': None, 'changes': []}
     
@@ -102,6 +108,10 @@ Package names must be unique to avoid conflicts in PyPI and CLI commands.
         new_tags = set(speckit_entry['tags'])
         if old_tags != new_tags:
             result['changes'].append("Tags updated")
+        old_slash = set(old_speckit.get('slash_commands', []))
+        new_slash = set(speckit_entry.get('slash_commands', []))
+        if old_slash != new_slash:
+            result['changes'].append("Slash commands updated")
         
         registry['speckits'][existing_index] = speckit_entry
         print(f"✅ Updated {metadata['name']} in registry")
@@ -144,6 +154,7 @@ def main():
     parser.add_argument('--cli', required=True, help='CLI command name')
     parser.add_argument('--license', required=True, help='License type')
     parser.add_argument('--tags', default='', help='Comma-separated tags')
+    parser.add_argument('--slash-commands', default='', help='Comma-separated slash commands')
     parser.add_argument('--registry', default='speckits.json', help='Registry file path')
     
     args = parser.parse_args()
@@ -156,7 +167,8 @@ def main():
         'pypi_package': args.pypi,
         'cli_command': args.cli,
         'license': args.license,
-        'tags': args.tags
+        'tags': args.tags,
+        'slash_commands': args.slash_commands
     }
     
     result = add_to_registry(metadata, args.registry)

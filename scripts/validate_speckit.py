@@ -110,6 +110,21 @@ def parse_toml_simple(content: str) -> Dict:
             if scripts:
                 result['project']['scripts'] = scripts
         
+        # Extract slash commands from [tool.speckit]
+        tool_speckit_match = re.search(r'\[tool\.speckit\](.*?)(?=\[|$)', content, re.DOTALL)
+        if tool_speckit_match:
+            tool_text = tool_speckit_match.group(1)
+            slash_match = re.search(r'slash[_-]commands\s*=\s*\[(.*?)\]', tool_text, re.DOTALL)
+            if slash_match:
+                slash_text = slash_match.group(1)
+                slash_commands = re.findall(r'["\']([^"\']+)["\']', slash_text)
+                if slash_commands:
+                    if 'tool' not in result:
+                        result['tool'] = {}
+                    if 'speckit' not in result['tool']:
+                        result['tool']['speckit'] = {}
+                    result['tool']['speckit']['slash_commands'] = slash_commands
+        
         return result
 
 
@@ -196,6 +211,15 @@ def validate_speckit(parsed_info: Dict) -> Tuple[bool, Dict, str]:
             error_msg += "\n\n⚠️ **Warnings:**\n\n" + "\n".join(f"- {w}" for w in warnings)
         return False, {}, error_msg
     
+    # Extract slash commands if available
+    slash_commands = []
+    # Check if slash_commands is defined in pyproject.toml [tool.speckit] or [project] section
+    tool_speckit = pyproject.get('tool', {}).get('speckit', {})
+    if 'slash_commands' in tool_speckit:
+        slash_commands = tool_speckit.get('slash_commands', [])
+    elif 'slash-commands' in project:
+        slash_commands = project.get('slash-commands', [])
+    
     # Build metadata
     metadata = {
         'name': project['name'],
@@ -204,6 +228,7 @@ def validate_speckit(parsed_info: Dict) -> Tuple[bool, Dict, str]:
         'repository': parsed_info['repo_url'],
         'pypi_package': parsed_info['pypi_name'] or project['name'],
         'cli_command': list(scripts.keys())[0] if scripts else project['name'],
+        'slash_commands': ','.join(slash_commands) if slash_commands else '',
         'license': project.get('license', {}).get('text', 'Unknown'),
         'tags': ','.join(project.get('keywords', [])),
         'created_at': '2025-11-09',

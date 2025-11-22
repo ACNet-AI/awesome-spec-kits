@@ -158,6 +158,7 @@ The registry is stored in `speckits.json`. Add your entry:
   "repository": "https://github.com/username/my-speckit",
   "pypi_package": "my-speckit",
   "cli_command": "my-speckit",
+  "slash_commands": ["/validate", "/generate"],
   "license": "MIT",
   "tags": ["api", "validation"],
   "created_at": "2025-11-09",
@@ -631,6 +632,7 @@ The registry stores these fields for each speckit:
 | `repository` | string | ✅ | GitHub repository URL |
 | `pypi_package` | string | ✅ | PyPI package name |
 | `cli_command` | string | ✅ | Main CLI command name |
+| `slash_commands` | array | ⚠️ | Slash commands supported (e.g., ["/validate", "/generate"]) |
 | `license` | string | ✅ | License type (MIT, Apache, etc.) |
 | `tags` | array | ⚠️ | Keywords for search (from `pyproject.toml`) |
 | `created_at` | string | ✅ | Registration date (YYYY-MM-DD) |
