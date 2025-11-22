@@ -9,8 +9,19 @@
       "repository": "https://github.com/ACNet-AI/marketing-spec-kit",
       "pypi_package": "marketing-spec-kit",
       "cli_command": "marketing_spec_kit",
-      "sd_type": ["SDM"],
-      "slash_commands": ["/init", "/validate", "/generate", "/plan"],
+      "sd_type": ["sdm"],
+      "slash_commands": [
+        "marketspec.constitution",
+        "marketspec.specify",
+        "marketspec.clarify",
+        "marketspec.plan",
+        "marketspec.tasks",
+        "marketspec.implement",
+        "marketspec.review",
+        "marketspec.optimize",
+        "marketspec.analyze",
+        "marketspec.checklist"
+      ],
       "license": "MIT",
       "tags": [
         "marketing",
@@ -32,8 +43,6 @@
       "repository": "https://github.com/ACNet-AI/mcp-spec-kit",
       "pypi_package": "mcp-speckit",
       "cli_command": "mcp_speckit",
-      "sd_type": ["SDD", "SDS"],
-      "slash_commands": ["/validate", "/test", "/deploy"],
       "license": "MIT",
       "tags": [
         "mcp",
