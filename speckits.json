@@ -3,6 +3,82 @@
   "last_updated": "2025-11-22T06:00:00.000000Z",
   "speckits": [
     {
+      "name": "specify-cli",
+      "version": "0.0.22",
+      "description": "GitHub Spec Kit - A tool to bootstrap your projects for Spec-Driven Development (SDD)",
+      "repository": "https://github.com/github/spec-kit",
+      "pypi_package": "specify-cli",
+      "cli_command": "specify",
+      "sd_type": ["sdd"],
+      "slash_commands": [
+        "/speckit.constitution",
+        "/speckit.specify",
+        "/speckit.plan",
+        "/speckit.tasks",
+        "/speckit.implement",
+        "/speckit.review"
+      ],
+      "license": "MIT",
+      "tags": [
+        "spec-driven",
+        "sdd",
+        "github",
+        "copilot",
+        "engineering",
+        "prd"
+      ],
+      "created_at": "2025-11-22",
+      "updated_at": "2025-11-22",
+      "status": "active"
+    },
+    {
+      "name": "openspec",
+      "version": "0.16.0",
+      "description": "AI-native system for spec-driven development (TypeScript)",
+      "repository": "https://github.com/Fission-AI/OpenSpec",
+      "pypi_package": "N/A",
+      "cli_command": "openspec",
+      "sd_type": ["sdd"],
+      "license": "MIT",
+      "tags": [
+        "openspec",
+        "specs",
+        "ai",
+        "development",
+        "typescript"
+      ],
+      "created_at": "2025-11-22",
+      "updated_at": "2025-11-22",
+      "status": "active"
+    },
+    {
+      "name": "meta-spec",
+      "version": "0.9.7",
+      "description": "Meta-specification framework for generating Spec-Driven X (SD-X) toolkits for AI agents",
+      "repository": "https://github.com/ACNet-AI/MetaSpec",
+      "pypi_package": "meta-spec",
+      "cli_command": "metaspec",
+      "sd_type": ["sds"],
+      "slash_commands": [
+        "metaspec.init",
+        "metaspec.generate",
+        "metaspec.validate",
+        "metaspec.contribute"
+      ],
+      "license": "MIT",
+      "tags": [
+        "meta-spec",
+        "spec-driven",
+        "code-generation",
+        "meta-programming",
+        "specification",
+        "sdd"
+      ],
+      "created_at": "2025-11-22",
+      "updated_at": "2025-11-22",
+      "status": "active"
+    },
+    {
       "name": "marketing-spec-kit",
       "version": "0.4.0",
       "description": "Specification Toolkit for Marketing Operations - Transform marketing chaos into structured, AI-driven workflows",
