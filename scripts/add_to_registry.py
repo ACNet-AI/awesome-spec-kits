@@ -71,7 +71,7 @@ Package names must be unique to avoid conflicts in PyPI and CLI commands.
         'version': metadata['version'],
         'description': metadata['description'],
         'repository': metadata['repository'],
-        'pypi_package': metadata['pypi_package'],
+        'package': metadata['package'],
         'cli_command': metadata['cli_command'],
         'license': metadata['license'],
         'tags': metadata['tags'].split(',') if metadata['tags'] else [],
@@ -160,7 +160,7 @@ def main():
     parser.add_argument('--version', required=True, help='Speckit version')
     parser.add_argument('--description', required=True, help='Speckit description')
     parser.add_argument('--repository', required=True, help='GitHub repository URL')
-    parser.add_argument('--pypi', required=True, help='PyPI package name')
+    parser.add_argument('--package', required=True, help='Package name (PyPI, npm, etc.)')
     parser.add_argument('--cli', required=True, help='CLI command name')
     parser.add_argument('--license', required=True, help='License type')
     parser.add_argument('--tags', default='', help='Comma-separated tags')
@@ -175,7 +175,7 @@ def main():
         'version': args.version,
         'description': args.description,
         'repository': args.repository,
-        'pypi_package': args.pypi,
+        'package': args.package,
         'cli_command': args.cli,
         'license': args.license,
         'tags': args.tags,

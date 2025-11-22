@@ -247,7 +247,7 @@ def validate_speckit(parsed_info: Dict) -> Tuple[bool, Dict, str]:
         'version': project['version'],
         'description': project['description'],
         'repository': parsed_info['repo_url'],
-        'pypi_package': parsed_info['pypi_name'] or project['name'],
+        'package': parsed_info['pypi_name'] or project['name'],
         'cli_command': list(scripts.keys())[0] if scripts else project['name'],
         'sd_type': ','.join(sd_type) if sd_type else '',
         'slash_commands': ','.join(slash_commands) if slash_commands else '',

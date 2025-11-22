@@ -7,7 +7,7 @@
       "version": "0.0.22",
       "description": "GitHub Spec Kit - A tool to bootstrap your projects for Spec-Driven Development (SDD)",
       "repository": "https://github.com/github/spec-kit",
-      "pypi_package": "specify-cli",
+      "package": "specify-cli",
       "cli_command": "specify",
       "sd_type": ["sdd"],
       "slash_commands": [
@@ -36,7 +36,7 @@
       "version": "0.16.0",
       "description": "AI-native system for spec-driven development (TypeScript)",
       "repository": "https://github.com/Fission-AI/OpenSpec",
-      "pypi_package": "N/A",
+      "package": "N/A",
       "cli_command": "openspec",
       "sd_type": ["sdd"],
       "license": "MIT",
@@ -56,7 +56,7 @@
       "version": "0.9.7",
       "description": "Meta-specification framework for generating Spec-Driven X (SD-X) toolkits for AI agents",
       "repository": "https://github.com/ACNet-AI/MetaSpec",
-      "pypi_package": "meta-spec",
+      "package": "meta-spec",
       "cli_command": "metaspec",
       "sd_type": ["sds"],
       "slash_commands": [
@@ -83,7 +83,7 @@
       "version": "0.4.0",
       "description": "Specification Toolkit for Marketing Operations - Transform marketing chaos into structured, AI-driven workflows",
       "repository": "https://github.com/ACNet-AI/marketing-spec-kit",
-      "pypi_package": "marketing-spec-kit",
+      "package": "marketing-spec-kit",
       "cli_command": "marketing_spec_kit",
       "sd_type": ["sdm"],
       "slash_commands": [
@@ -117,7 +117,7 @@
       "version": "0.1.0",
       "description": "AI Agent lifecycle management toolkit for MCP Server Lifecycle Specification",
       "repository": "https://github.com/ACNet-AI/mcp-spec-kit",
-      "pypi_package": "mcp-speckit",
+      "package": "mcp-speckit",
       "cli_command": "mcp_speckit",
       "sd_type": ["sdd"],
       "slash_commands": [

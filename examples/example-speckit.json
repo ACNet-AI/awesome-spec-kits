@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An example specification toolkit demonstrating best practices for MetaSpec speckits",
   "repository": "https://github.com/your-username/example-spec-kit",
-  "pypi_package": "example-spec-kit",
+  "package": "example-spec-kit",
   "cli_command": "example-spec-kit",
   "sd_type": ["SDD"],
   "slash_commands": ["/validate", "/generate", "/help"],

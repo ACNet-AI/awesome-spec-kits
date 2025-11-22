@@ -33,7 +33,7 @@ Ensure your speckit meets these requirements:
 
 1. Go to [**Create Registration Issue**](../../issues/new?template=register-speckit.yml)
 2. Fill in your speckit's GitHub repository URL
-3. Optionally provide PyPI package name
+3. Optionally provide Package name (PyPI, npm, etc.)
 4. **Check the authorization box** - Confirm you have permission to register
 5. Submit the issue
 
@@ -156,7 +156,7 @@ The registry is stored in `speckits.json`. Add your entry:
   "version": "1.0.0",
   "description": "Brief description",
   "repository": "https://github.com/username/my-speckit",
-  "pypi_package": "my-speckit",
+  "package": "my-speckit",
   "cli_command": "my-speckit",
   "sd_type": ["SDD"],
   "slash_commands": ["/validate", "/generate"],
@@ -512,7 +512,7 @@ Open `speckits.json` and find your speckit by name:
   "version": "1.0.0",  // ← Update this
   "description": "Old description",  // ← Update this
   "repository": "https://github.com/username/my-speckit",
-  "pypi_package": "my-speckit",
+  "package": "my-speckit",
   "cli_command": "my-speckit",
   "license": "MIT",
   "tags": ["api", "validation"],  // ← Update this
@@ -631,7 +631,7 @@ The registry stores these fields for each speckit:
 | `version` | string | ✅ | Current version |
 | `description` | string | ✅ | Brief description (50-200 chars) |
 | `repository` | string | ✅ | GitHub repository URL |
-| `pypi_package` | string | ✅ | PyPI package name |
+| `package` | string | ✅ | Package name (PyPI, npm, etc.) |
 | `cli_command` | string | ✅ | Main CLI command name |
 | `sd_type` | array | ⚠️ | Spec-Driven type(s): "SDD" (Development), "SDS" (Specification), "SDM" (Marketing) |
 | `slash_commands` | array | ⚠️ | Slash commands supported (e.g., ["/validate", "/generate"]) |
