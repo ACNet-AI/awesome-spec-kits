@@ -43,6 +43,20 @@
       "repository": "https://github.com/ACNet-AI/mcp-spec-kit",
       "pypi_package": "mcp-speckit",
       "cli_command": "mcp_speckit",
+      "sd_type": ["sdd"],
+      "slash_commands": [
+        "mcpspeckit.understand",
+        "mcpspeckit.design",
+        "mcpspeckit.validate-requirements",
+        "mcpspeckit.validate-design",
+        "mcpspeckit.build",
+        "mcpspeckit.test",
+        "mcpspeckit.deploy",
+        "mcpspeckit.operate",
+        "mcpspeckit.get-spec",
+        "mcpspeckit.check-phase-transition",
+        "mcpspeckit.validate-project"
+      ],
       "license": "MIT",
       "tags": [
         "mcp",
